@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class cagetoryRepository {
+public class CategoryRepository {
     private static final List<Category> ALL_CATEGORIES = Arrays.asList(
         new Category(0, "Technology")
         ,new Category(0, "People")

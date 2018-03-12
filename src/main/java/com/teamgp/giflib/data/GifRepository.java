@@ -1,9 +1,11 @@
 package com.teamgp.giflib.data;
 
+import com.teamgp.giflib.model.Category;
 import com.teamgp.giflib.model.Gif;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,6 +25,14 @@ public class GifRepository {
             if(gif.getName().equals(name)) return gif;
         }
         return null;
+    }
+
+    public List<Gif> findbyCategoryId(int id){
+        List<Gif> gifs = new ArrayList<>();
+        for(Gif gif : ALL_GIFS){
+            if(gif.getCategoryId() == id) gifs.add(gif);
+        }
+        return gifs;
     }
 
     public List<Gif> getAllGifs(){
