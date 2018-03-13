@@ -38,4 +38,12 @@ public class GifRepository {
     public List<Gif> getAllGifs(){
         return ALL_GIFS;
     }
+
+    public List<Gif> getFavorites(){
+        List<Gif> gifs = new ArrayList<>();
+        for(Gif gif : ALL_GIFS){
+            if (gif.isFavorite()) gifs.add(gif);
+        }
+        return gifs;
+    }
 }
