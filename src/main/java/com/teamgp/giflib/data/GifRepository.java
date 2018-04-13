@@ -20,6 +20,14 @@ public class GifRepository {
         new Gif("infinite-andrew", 2, LocalDate.of(2015,8,23), "Marissa Mayer", true)
     );
 
+    public List<Gif> searchByName(String name){
+        List<Gif> gifs = new ArrayList<>();
+        for (Gif gif : ALL_GIFS){
+            if(gif.getName().equalsIgnoreCase(name)) gifs.add(gif);
+        }
+        return gifs;
+    }
+
     public Gif findByName(String name){
         for(Gif gif : ALL_GIFS){
             if(gif.getName().equals(name)) return gif;
